@@ -1,0 +1,6 @@
+
+** Before start open an emulator and close animations in developer options.
+   Settings -> System -> Developer Options -> Drawing
+     - Window animation scale (off)
+     - Transaction animation scale (off)
+     - Animation duration scale (off)
