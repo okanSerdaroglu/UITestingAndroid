@@ -13,3 +13,10 @@
 
    Second way for in each test :
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
+
+** @RunWith(Suite::class)
+   @Suite.SuiteClasses(
+       MainActivityTest::class,
+       SecondaryActivityTest::class
+   ) means that run MainActivityTest and SecondaryActivityTest classes together
+
