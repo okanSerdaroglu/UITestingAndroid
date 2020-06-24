@@ -4,3 +4,12 @@
      - Window animation scale (off)
      - Transaction animation scale (off)
      - Animation duration scale (off)
+
+** You can define an activityScenario in 2 different ways
+
+   First way :
+       @get: Rule
+       val activityRule = ActivityScenarioRule(SecondaryActivity::class.java)
+
+   Second way for in each test :
+        val activityScenario = ActivityScenario.launch(MainActivity::class.java)
