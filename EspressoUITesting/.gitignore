@@ -14,3 +14,4 @@
 .cxx
 /.idea/
 /gradle.properties
+/app/google-services.json

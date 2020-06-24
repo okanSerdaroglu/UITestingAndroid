@@ -20,3 +20,17 @@
        SecondaryActivityTest::class
    ) means that run MainActivityTest and SecondaryActivityTest classes together
 
+
+
+** Firebase Test Lab : (for free, you can test max 2 device, 5 tests daily)
+
+    - Create project on firebase, add google-gson file inside app directory.
+
+    - Edit configuration -> Android Instrumented Tests -> Create new -> Follow this steps -> firebase_step1
+    firebase_step1 -> Click (Matrix configuration ... ) -> firebase_step2 -> firebase_step3 ->
+    firebase_step4 -> firebase_step5 -> apply -> ok
+
+    - Select created new configuration then run it.
+    - Look at Firebase Test Lab in firebase console
+
+
