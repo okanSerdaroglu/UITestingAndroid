@@ -86,4 +86,9 @@ dependencies {
     // Card View
     def cardview_version = "1.0.0"
     implementation "androidx.cardview:cardview:$cardview_version"
+
+    // material dialogs
+    def matieral_dialogs_version = "3.1.1"
+    implementation "com.afollestad.material-dialogs:core:$matieral_dialogs_version"
+    implementation "com.afollestad.material-dialogs:input:$matieral_dialogs_version"
 }
