@@ -2,13 +2,24 @@ package com.example.espressouitesting.ui.movie
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.request.RequestOptions
 import com.example.espressouitesting.R
+import com.example.espressouitesting.data.source.MoviesDataSource
+import com.example.espressouitesting.data.source.MoviesRemoteDataSource
 import com.example.espressouitesting.factory.MovieFragmentFactory
 
 class MainActivity : AppCompatActivity() {
 
+    // dependencies (typically would be injected with dagger)
+    lateinit var requestOptions: RequestOptions
+    lateinit var moviesDataSource: MoviesDataSource
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportFragmentManager.fragmentFactory = MovieFragmentFactory()
+        initDependencies()
+        supportFragmentManager.fragmentFactory = MovieFragmentFactory(
+            requestOptions,
+            moviesDataSource
+        )
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -24,6 +35,17 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, MovieDetailFragment::class.java, bundle)
                 .commit()
         }
+    }
+
+    private fun initDependencies(){
+
+        // glide
+        requestOptions = RequestOptions
+            .placeholderOf(R.drawable.default_image)
+            .error(R.drawable.default_image)
+
+        // Data Source
+        moviesDataSource = MoviesRemoteDataSource()
     }
 
 }

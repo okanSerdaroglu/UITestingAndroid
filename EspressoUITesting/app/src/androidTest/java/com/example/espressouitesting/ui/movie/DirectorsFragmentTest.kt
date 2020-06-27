@@ -20,7 +20,7 @@ class DirectorsFragmentTest {
 
         //SETUP
         val directors = arrayListOf("R.J. Stewart", "James Vanderbilt")
-        val fragmentFactory = MovieFragmentFactory()
+        val fragmentFactory = MovieFragmentFactory(null,null)
         val bundle = Bundle()
         bundle.putStringArrayList("args_directors", directors)
         val scenario = launchFragmentInContainer<DirectorsFragment>(
@@ -28,6 +28,7 @@ class DirectorsFragmentTest {
             factory = fragmentFactory
         )
 
+        // VERIFY
         onView(withId(R.id.directors_text))
             .check(
                 matches(
