@@ -13,6 +13,7 @@ import com.example.espressouitesting.R
 import com.example.espressouitesting.data.FakeMovieData
 import com.example.espressouitesting.ui.movie.MoviesListAdapter.*
 import com.example.espressouitesting.util.EspressoIdlingResource
+import org.hamcrest.CoreMatchers.not
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -46,6 +47,8 @@ class MovieListFragmentTest {
     @Test
     fun test_isListFragmentVisible_onAppLaunch() {
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.progress_bar)).check(matches(not(isDisplayed())))
     }
 
 
