@@ -6,7 +6,8 @@ object EspressoIdlingResource {
 
     private const val RESOURCE = "GLOBAL"
 
-    @JvmField val countingIdlingResource = CountingIdlingResource(RESOURCE)
+    @JvmField
+    val countingIdlingResource = CountingIdlingResource(RESOURCE)
     // @JvmField means it is a static field
 
     fun increment() {
