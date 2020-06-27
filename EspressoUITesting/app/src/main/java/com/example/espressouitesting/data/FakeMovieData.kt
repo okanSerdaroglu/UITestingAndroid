@@ -2,6 +2,9 @@ package com.example.espressouitesting.data
 
 object FakeMovieData {
 
+
+    const val FAKE_NETWORK_DELAY = 1000L
+
     val movies = arrayOf(
         Movie(
             0,
